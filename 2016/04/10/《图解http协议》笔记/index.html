@@ -3,18 +3,42 @@
 <head>
   <meta charset="utf-8">
   
-  <title>liuzhen | liuzhenbase</title>
+  <title>liuzhenbase</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="刘振的网络日志，专注前端技术，探索全栈奥妙，记录生活思考">
+  <meta name="description" content="《图解HTTP协议》笔记使用touch更新网站某资源，返回403状态码是否是通过时间来判定如何查看是否开启TCP持久连接？持久连接与管线化有什么区别，技术是如何实现的？在什么状态下返回
+204 no Content
+206 partial Content
+303 see Other
+304 not Modified
+307
+400 bad Request
+401 认证
+403 Forbidden（">
 <meta property="og:type" content="article">
-<meta property="og:title" content="liuzhen">
-<meta property="og:url" content="http://liuzhenbase.github.io/2016/06/02/liuzhen/index.html">
+<meta property="og:title" content="liuzhenbase">
+<meta property="og:url" content="http://liuzhenbase.github.io/2016/04/10/《图解http协议》笔记/index.html">
 <meta property="og:site_name" content="liuzhenbase">
-<meta property="og:description" content="刘振的网络日志，专注前端技术，探索全栈奥妙，记录生活思考">
-<meta property="og:updated_time" content="2016-06-01T01:33:23.000Z">
+<meta property="og:description" content="《图解HTTP协议》笔记使用touch更新网站某资源，返回403状态码是否是通过时间来判定如何查看是否开启TCP持久连接？持久连接与管线化有什么区别，技术是如何实现的？在什么状态下返回
+204 no Content
+206 partial Content
+303 see Other
+304 not Modified
+307
+400 bad Request
+401 认证
+403 Forbidden（">
+<meta property="og:updated_time" content="2016-04-12T09:31:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="liuzhen">
-<meta name="twitter:description" content="刘振的网络日志，专注前端技术，探索全栈奥妙，记录生活思考">
+<meta name="twitter:title" content="liuzhenbase">
+<meta name="twitter:description" content="《图解HTTP协议》笔记使用touch更新网站某资源，返回403状态码是否是通过时间来判定如何查看是否开启TCP持久连接？持久连接与管线化有什么区别，技术是如何实现的？在什么状态下返回
+204 no Content
+206 partial Content
+303 see Other
+304 not Modified
+307
+400 bad Request
+401 认证
+403 Forbidden（">
   
     <link rel="alternate" href="/atom.xml" title="liuzhenbase" type="application/atom+xml">
   
@@ -67,33 +91,65 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-liuzhen" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-《图解http协议》笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/02/liuzhen/" class="article-date">
-  <time datetime="2016-06-01T17:33:23.000Z" itemprop="datePublished">2016-06-01</time>
+    <a href="/2016/04/10/《图解http协议》笔记/" class="article-date">
+  <time datetime="2016-04-10T02:16:51.000Z" itemprop="datePublished">2016-04-09</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      liuzhen
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="《图解HTTP协议》笔记"><a href="#《图解HTTP协议》笔记" class="headerlink" title="《图解HTTP协议》笔记"></a>《图解HTTP协议》笔记</h1><p>使用touch更新网站某资源，返回403状态码是否是通过时间来判定<br>如何查看是否开启TCP持久连接？<br>持久连接与管线化有什么区别，技术是如何实现的？<br>在什么状态下返回</p>
+<pre><code>204 no Content
+206 partial Content
+303 see Other
+304 not Modified
+307
+400 bad Request
+401 认证
+403 Forbidden（拒绝访问）
+404 not found
+500 服务器错误
+503 服务器超负荷
+</code></pre><p>使用代理服务器会有安全隐患么？<br>更改host文件有安全隐患么？<br>Nginx 和 Apache 各有什么优缺点？<br>通用首部</p>
+<pre><code>cache-Control 缓存
+Connection 控制不再转发给代理的首部字段、管理持久连接
+Date 
+Pragma 与cache-Control类似
+Trailer 分块传输
+Transfer-Encoding 规定分块传输的编码格式
+Upgrade 其他协议
+via 追踪路由信息
+Warning 警告信息
+</code></pre><p>请求首部</p>
+<pre><code>Accept 用户代理能够处理的文件类型及优先级
+Accept-Charset 用户代理支持的字符集及相对优先顺序
+Accept-Encoding 告知服务器用户代理支持的内容编码及内容编码的优先级顺序
+Accept-Language 代理能够处理的自然语言极其优先级
+Authorization 用户代理认证
+Expect 验证服务器所支持的扩展
+Form 用户的邮箱
+Host 主机名（必须包含）
+If-Match 附带请求条件，只有为true时才接受请求
+If-Modified-Since 指定时间后更新过文件才返回，否则返回403
+If-None-Match 与If-Match相反
+If-Range 不懂
+If-Unmodified-Since 与If-Modified-Since相反
+Max-Forwards 指定可经过的服务器最大数目
+Proxy-Authorization 与Authorization类似，只不过时代理服务器的认证
+Range 分段传输时指定传输范围，成功返回206，失败返回200
+Range 页面来源URI
+TE 类似Accept-Encoding，用于传输编码
+User-Agent 用户代理标识符
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://liuzhenbase.github.io/2016/06/02/liuzhen/" data-id="ciow7bc4j0002460p5lhd0ukd" class="article-share-link">Поделиться</a>
+      <a data-url="http://liuzhenbase.github.io/2016/04/10/《图解http协议》笔记/" data-id="ciow9mm460002he0peiyjk8vm" class="article-share-link">Поделиться</a>
       
       
     </footer>
@@ -102,19 +158,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/06/02/liuzhen-1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/06/01/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Следующий</strong>
       <div class="article-nav-title">
         
-          liuzhen
+          Hello World
         
       </div>
     </a>
   
   
-    <a href="/2016/06/01/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/04/08/MAC OS上Web环境搭建及配置/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Предыдущий</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>
