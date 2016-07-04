@@ -68,6 +68,129 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-js类型判断的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/前端/js类型判断的方法/" class="article-date">
+  <time datetime="2016-07-04T01:48:22.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/前端/js类型判断的方法/">JS数据类型的判断</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数据类型的判断是学习JS中必须要过的一关。判断数据类型有几种不同的办法，各种方法之间的差异、浏览器或语言本身设计的不足都是需要掌握的知识。</p>
+<table>
+<thead>
+<tr>
+<th>检测方法\数据类型</th>
+<th>number</th>
+<th>boolean</th>
+<th>string</th>
+<th>null</th>
+<th>undefined</th>
+<th>object</th>
+<th>array</th>
+<th>date</th>
+<th>regexp</th>
+<th>function</th>
+<th>字符串基本包装类型</th>
+<th>数字基本包装类型</th>
+<th>布尔基本包装类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>typeof</td>
+<td>number</td>
+<td>boolean</td>
+<td>string</td>
+<td><span style="color:orange;">object[1]</span></td>
+<td>undefined</td>
+<td>object</td>
+<td>object</td>
+<td>object</td>
+<td>object</td>
+<td>function</td>
+<td>object</td>
+<td>object</td>
+<td>object</td>
+</tr>
+<tr>
+<td>instanceof</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>-</td>
+<td>-</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Object.prototype.toString</td>
+<td>[object Number]</td>
+<td>[object Boolean]</td>
+<td>[object String]</td>
+<td>[object Null]</td>
+<td>[object Undefined]</td>
+<td>[object Object]</td>
+<td>[object Array]</td>
+<td>[object Date]</td>
+<td>[object RegExp]</td>
+<td>[object Function]</td>
+<td>[object String]</td>
+<td>[object Number]</td>
+<td>[object Boolean]</td>
+</tr>
+<tr>
+<td>constructor</td>
+</tr>
+<tr>
+<td>duck type</td>
+</tr>
+</tbody>
+</table>
+        
+          <p class="article-more-link">
+            <a href="/前端/js类型判断的方法/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://liuzhenbase.github.io/前端/js类型判断的方法/" data-id="ciq7hirp00001ei0pic8dgx17" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据类型/">数据类型</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-关于本站" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/other/关于本站/" class="article-date">
@@ -104,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://liuzhenbase.github.io/other/关于本站/" data-id="cioxq5wjz0005dx0pa9kz80kl" class="article-share-link">Share</a>
+      <a data-url="http://liuzhenbase.github.io/other/关于本站/" data-id="ciq7hirp40002ei0px7p4y3ka" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计划/">计划</a></li></ul>
@@ -125,7 +248,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li></ul>
     </div>
   </div>
 
@@ -135,7 +258,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据类型/">数据类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a></li></ul>
     </div>
   </div>
 
@@ -145,7 +268,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/计划/" style="font-size: 10px;">计划</a>
+      <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/数据类型/" style="font-size: 10px;">数据类型</a> <a href="/tags/计划/" style="font-size: 10px;">计划</a>
     </div>
   </div>
 
@@ -154,7 +277,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
     </div>
   </div>
 
@@ -165,6 +288,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/前端/js类型判断的方法/">JS数据类型的判断</a>
+          </li>
         
           <li>
             <a href="/other/关于本站/">关于本站</a>
