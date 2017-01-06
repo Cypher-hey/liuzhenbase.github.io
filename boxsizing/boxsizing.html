@@ -10,6 +10,7 @@
 			width: 800px;
 			margin: auto;
 			height:100px;
+			font-size: 20px;
 			padding: 400px 200px;
 			background: #a0F;
 			box-sizing: border-box;
@@ -18,30 +19,17 @@
     </style>
 </head>
 <body>
-	<div class="box">
-		width: 800px;
-		margin: auto;
-		height:100px;
-		padding: 400px 200px;
-		background: #a0F;
-	</div>
+	<div class="box"></div>
     <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
 	$(document).ready(function() {
-		init_page();
-		function init_page() {
-			$(window).resize(function(){
-  				init_width();
-			});
-			
-		}
+		init_width();
+		$(window).resize(function(){
+  			init_width();
+		});
 
 		function init_width() {
-			if ($(document).width() <= 1170) {
-				$(".box").css({
-					background: "#fff"
-				}).text($(document).width());
-			}
+			$(".box").text($(document).width()+","+$(window).width());
 		}
 	});
 	</script>
