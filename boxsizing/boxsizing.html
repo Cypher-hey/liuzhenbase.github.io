@@ -23,14 +23,7 @@
     <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
 	$(document).ready(function() {
-		init_width();
-		$(window).resize(function(){
-  			init_width();
-		});
-
-		function init_width() {
-			$(".box").text($(document).width()+","+$(window).width());
-		}
+		$(".box").text(navigator.userAgent +","+ /AppleWebKit.*Mobile/i.test(navigator.userAgent));
 	});
 	</script>
 </body>
