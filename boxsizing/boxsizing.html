@@ -24,6 +24,13 @@
     <script>
 	$(document).ready(function() {
 		$(".box").text(navigator.userAgent +","+ /AppleWebKit.*Mobile/i.test(navigator.userAgent));
+		if (/AppleWebKit.*Mobile/i.test(navigator.userAgent)) {
+            // 移动端
+            $(".box").css({
+                color : "#fff",
+                background : "#af0"
+            })
+        }
 	});
 	</script>
 </body>
