@@ -9,7 +9,6 @@
     	.box{
 			width: 800px;
 			margin: auto;
-			height:100px;
 			font-size: 20px;
 			padding: 400px 200px;
 			background: #a0F;
@@ -23,14 +22,36 @@
             height: 40px;
             background: #e82;
             color: #fff;
-            
+
             font-size: 18px;
             text-align: center;
         }
     </style>
 </head>
 <body>
-	<div class="box"></div>
+	<div class="box">
+        <p>
+            document.documentElement.clientWidth：<span id="viewport"></span>
+        </p>
+        <p>
+            document.documentElement.scrollWidth：<span id="viewportS"></span>
+        </p>
+        <p>
+            document.body.scrollWidth：<span id="body"></span>
+        </p>
+        <p>
+            window.innerWidth：<span id="window"></span>
+        </p>
+        <p>
+            screen.availWidth：<span id="screen"></span>
+        </p>
+        <div id="me" style="width:10%;">
+            
+        </div>
+        <p>
+            10%-width-block.clientWidth：<span id="ten"></span>
+        </p>
+    </div>
     <div class="topbar"></div>
     <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
@@ -44,6 +65,16 @@
             })
         }
 	});
+
+    setInterval(function () {
+        $("#viewport").text(document.documentElement.clientWidth) ;
+        $("#viewportS").text(document.documentElement.scrollWidth) ;
+        $("#body").text(document.body.clientWidth) ;
+        $("#window").text(window.innerWidth) ;
+        $("#screen").text(screen.availWidth) ;
+        $("#ten").text($("#me")[0].clientWidth) ;
+        $("#img").text($("img")[0].clientWidth) ;
+    }, 17 );
 	</script>
 </body>
 </html>
