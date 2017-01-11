@@ -75,6 +75,17 @@
         $("#ten").text($("#me")[0].clientWidth) ;
         $("#img").text($("img")[0].clientWidth) ;
     }, 17 );
+
+    $(document).ready(function () {
+        var theWindow = $(window);
+
+        function resized() {
+            alert('被缩放了!');
+        }
+        theWindow.resize(function () {
+            resized();
+        }).trigger('resize');
+    });
 	</script>
 </body>
 </html>
