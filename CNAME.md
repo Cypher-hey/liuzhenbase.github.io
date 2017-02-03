@@ -1,0 +1,3 @@
+//你要绑定的域名
+liuzhenbase.com
+www.liuzhenbase.com
