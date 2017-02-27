@@ -1,7 +1,15 @@
 ## 来源
 [百度前端学院2017](http://ife.baidu.com/course/all)年的项目
 
-## 项目
+## dome地址
+```
+在github中地址为
+https://github.com/liuzhenbase/liuzhenbase.github.io/blob/master/ife2017/binbinxueyuan/task1.html
+那么dome地址为
+liuzhenbase.github.io/ife2017/binbinxueyuan/task1.html
+```
+
+## 斌斌学院
 #### task1
 可以优化的地方：
 - 增加对空气质量的输入值验证
