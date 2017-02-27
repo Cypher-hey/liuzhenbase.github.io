@@ -19,18 +19,18 @@
 	在事件处理函数中
 	获取aqi-input输入的值，并显示在aqi-display中
 	*/
-	var input = document.getElementById("aqi-input")
-	var button = document.getElementById("button")
-	var display = document.getElementById("aqi-display")
+	var input = document.getElementById("aqi-input");
+	var button = document.getElementById("button");
+	var display = document.getElementById("aqi-display");
 
 	button.addEventListener("click", function(){
-	    var value = input.value.trim()
+	    var value = input.value.trim();
 	    if(value.length > 0){
-            display.innerText = value
+            display.innerText = value;
 		}else{
-	        console.log("空值")
+	        console.log("空值");
 		}
-	}, false)
+	}, false);
 })();
 </script>
 </body>
