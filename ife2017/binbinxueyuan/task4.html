@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>IFE JavaScript Task 01</title>
+		<style>
+			.box{
+				font-size: 0;
+				padding: 20px 0;
+			}
+			.item{
+				font-size: 13px;
+				color: #fff;
+				background: #f00;
+				display: inline-block;
+				margin: 0 5px 5px 0;
+				padding: 5px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+<body>
+	<input type="text" placeholder="请输入整数" id="input">
+	<input type="button" value="左侧入" id="left-in">
+	<input type="button" value="右侧入" id="right-in">
+	<input type="button" value="左侧出" id="left-out">
+	<input type="button" value="右侧出" id="right-out">
+	<div id="box" class="box">
+
+	</div>
+<script type="text/javascript">
+function select(id){
+    return document.getElementById(id);
+}
+;(function($) {
+    var input = $("input");
+    var box = $("box");
+    var list = [];
+
+    /**
+	 * 判断是否是一个整数
+     * @param value
+     * @returns {*}
+     */
+	function isNumber(value){
+        var number = input.value.trim();
+        input.value = "";
+        input.focus();
+        if(/^\d+$/.test(number)){
+            return number;
+		}else{
+            console.log(number + "不是一个数值，请重新输入");
+            return false;
+		}
+	}
+
+    /**
+	 * 将数组显示在页面
+     * @param list
+     */
+	function setBox(list){
+		var box_text = "";
+	    list.forEach(function(value, index){
+		    box_text = box_text + '<div class="item" data-index="' + index + '">' + value + '</div>';
+		})
+		box.innerHTML = box_text;
+	}
+	$("left-in").addEventListener("click",function(){
+	    var number = isNumber();
+	    if(number !== false){
+			list.unshift(number);
+		}
+        setBox(list);
+	})
+    $("right-in").addEventListener("click",function(){
+        var number = isNumber();
+        if(number !== false){
+            list.push(number);
+        }
+        setBox(list);
+    })
+    $("left-out").addEventListener("click",function(){
+   		list.shift();
+        setBox(list);
+    })
+    $("right-out").addEventListener("click",function(){
+        list.pop();
+        setBox(list);
+    })
+    box.addEventListener("click",function(event){
+        var _this = event.target;
+        if(_this.className === "item"){
+            console.log("您删除了" + list[_this.dataset.index]);
+			list.splice(parseInt(_this.dataset.index),1);
+		}
+		setBox(list);
+    })
+})(select);
+</script>
+</body>
+</html>
