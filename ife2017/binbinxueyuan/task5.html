@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>IFE JavaScript Task 01</title>
+		<style>
+			.box{
+				font-size: 0;
+				padding: 0;
+				margin: 10px 0;
+				background: #eee;
+				height: 300px;
+				line-height: 300px;
+			}
+			.item{
+				font-size: 12px;
+				width: 12px;
+				text-align: center;
+				color: #fff;
+				background: #f00;
+				display: inline-block;
+				vertical-align: bottom;
+				margin: 0 2px 0 0;
+				padding: 0;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+<body>
+	<input type="text" placeholder="请输入整数" id="input">
+	<input type="button" value="左侧入" id="left-in">
+	<input type="button" value="右侧入" id="right-in">
+	<input type="button" value="左侧出" id="left-out">
+	<input type="button" value="右侧出" id="right-out">
+	<input type="button" value="随机生成" id="random">
+	<input type="button" value="冒泡排序" id="sort-1">
+	<div id="box" class="box">
+
+	</div>
+<script type="text/javascript">
+function select(id){
+    return document.getElementById(id);
+}
+;(function($) {
+    var input = $("input");
+    var box = $("box");
+    var list = [];
+	var input_number = 0;
+	var if_clear = false;// 是否开启输入后清空输入框
+
+    /**
+	 * 判断是否是一个整数，且大于等于10，小于等于100,
+     * @param value
+     * @returns {*}
+     */
+	function isNumber(){
+		if(input_number >= 60){
+			alert("最多只能输入60个");
+			return false;
+		}
+        var number = input.value.trim();
+		if(if_clear){
+			input.value = "";
+		}
+        input.focus();
+        if(/^\d+$/.test(number)){
+			if(number >= 10&&number <= 100){
+				input_number++;
+				return number;
+			}else{
+				console.log("请输入10～100之间的整数");
+				return false;
+			}
+		}else{
+            console.log(number + "不是一个整数，请重新输入");
+            return false;
+		}
+	}
+
+    /**
+	 * 将数组显示在页面
+     * @param list
+     */
+	function setBox(list){
+		var box_text = "";
+	    list.forEach(function(value, index){
+		    box_text = box_text + '<div class="item"' + 'style="height:' + (value*3) + 'px"' + 'title="' + value + '" data-index="' + index + '"></div>';
+		})
+		box.innerHTML = box_text;
+	}
+	$("left-in").addEventListener("click",function(){
+	    var number = isNumber();
+	    if(number !== false){
+			list.unshift(number);
+		}
+        setBox(list);
+	})
+    $("right-in").addEventListener("click",function(){
+        var number = isNumber();
+		if(number !== false){
+			list.push(number);
+		}
+        setBox(list);
+    })
+    $("left-out").addEventListener("click",function(){
+   		list.shift();
+        setBox(list);
+		if(input_number > 0){
+			input_number--;
+		}
+    })
+    $("right-out").addEventListener("click",function(){
+		list.pop();
+		setBox(list);
+		if(input_number > 0){
+			input_number--;
+		}
+	})
+	$("random").addEventListener("click",function(){
+		list.length = 0;
+		for(var i = 0;i < 60;i++){
+			var value = parseInt(Math.random() * 90 + 10);
+			list.push(value);
+		}
+		setBox(list);
+		input_number = 60;
+	})
+	$("sort-1").addEventListener("click",function(){
+		var length = list.length;
+		for(var i = 0;i < length - 1;i++){
+			for(var j = i+1;j < length;j++){
+				if(list[i] > list[j]){
+					var middle = list[i];
+					list[i] = list[j];
+					list[j] = middle;
+				}
+			}
+		}
+		setBox(list);
+	})
+    box.addEventListener("click",function(event){
+        var _this = event.target;
+        if(_this.className === "item"){
+            console.log("您删除了" + list[_this.dataset.index]);
+			list.splice(parseInt(_this.dataset.index),1);
+
+			if(input_number > 0){
+				input_number--;
+			}
+		}
+		setBox(list);
+    })
+})(select);
+</script>
+</body>
+</html>
